@@ -1,12 +1,19 @@
 # ZimbraWsdl
 
-TODO: Write a gem description
+ZimbraWsdl just provides a valid WSDL document for the VMware Zimbra Soap API
+that can be used with any soap library.
+
+The gem just provides a valid document and a method that returns the path to
+it, so you can just require this gem in your Gemfile and you get a (hopefully)
+updated and community backed version of the Zimbra API WSDL.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'zimbra_wsdl'
+```ruby
+gem 'zimbra_wsdl'
+```
 
 And then execute:
 
@@ -18,7 +25,32 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Example usage with savon:
+
+```ruby
+require 'savon'
+require 'zimbra_wsdl'
+require 'pp'
+
+ZIMBRA_SERVER = "zimbra.example.com"
+ZIMBRA_ADMIN_USERNAME = "admin@zimbra.example.com"
+ZIMBRA_ADMIN_PASSWORD = "YOUR_PASSWORD"
+
+client = Savon::Client.new do
+  wsdl.document = ZimbraWsdl.admin_wsdl
+  wsdl.endpoint = "https://#{ZIMBRA_SERVER}:7071/service/admin/soap"
+  http.auth.ssl.verify_mode = :none
+end
+
+# Authenticate your client (NOTICE: ruby 1.9 hash syntax)
+client.request :auth_request, body: { name: ZIMBRA_ADMIN_USERNAME, password: ZIMBRA_ADMIN_PASSWORD }
+
+# Once authenticated you can call any api method
+accounts_response = client.request :get_all_accounts_request
+accounts = accounts_response.to_array(:get_all_accounts_response, :account)
+
+pp accounts
+```
 
 ## Contributing
 
