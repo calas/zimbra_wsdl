@@ -1,0 +1,3 @@
+ZIMBRA_SERVER = "zimbra.example.com"
+ZIMBRA_ADMIN_USERNAME = "admin@zimbra.example.com"
+ZIMBRA_ADMIN_PASSWORD = "YOUR_SECRET_PASSWORD"
