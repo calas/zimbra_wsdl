@@ -4,8 +4,8 @@ require File.expand_path('../lib/zimbra_wsdl/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Jorge Calás Lozano"]
   gem.email         = ["calas@qvitta.net"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{WSDL document for the VMware Zimbra soap api}
+  gem.summary       = %q{WSDL document for the VMware Zimbra soap api}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "zimbra_wsdl"
   gem.require_paths = ["lib"]
   gem.version       = ZimbraWsdl::VERSION
+
+  gem.add_development_dependency('minitest')
 end
