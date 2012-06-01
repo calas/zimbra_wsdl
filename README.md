@@ -25,16 +25,23 @@ Or install it yourself as:
 
 ## Usage
 
+The only method provided is `ZimbraWsdl.admin_wsdl` and returns the absolute path to the wsdl document. You can then use the document however you want.
+
 Example usage with savon:
 
 ```ruby
 require 'savon'
 require 'zimbra_wsdl'
-require 'pp'
 
 ZIMBRA_SERVER = "zimbra.example.com"
 ZIMBRA_ADMIN_USERNAME = "admin@zimbra.example.com"
 ZIMBRA_ADMIN_PASSWORD = "YOUR_PASSWORD"
+
+Savon.configure do |config|
+  config.log = false
+  config.log_level = :info
+  # config.logger = Logger.new('/tmp/zimbra_wsdl_savon_example.log')
+end
 
 client = Savon::Client.new do
   wsdl.document = ZimbraWsdl.admin_wsdl
@@ -49,7 +56,9 @@ client.request :auth_request, body: { name: ZIMBRA_ADMIN_USERNAME, password: ZIM
 accounts_response = client.request :get_all_accounts_request
 accounts = accounts_response.to_array(:get_all_accounts_response, :account)
 
-pp accounts
+accounts.each do |account|
+  puts account[:@name]
+end
 ```
 
 ## Contributing
