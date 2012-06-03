@@ -266,31 +266,9 @@
       </element>
       <element name="RemoveAccountAliasResponse"/>
 
-      <element name="SearchDirectoryRequest">
-        <complexType>
-          <sequence>
-            <element name="query" type="xsd:string"/>
-          </sequence>
-          <attribute name="limit" type="xsd:string"/>
-          <attribute name="offset" type="xsd:string"/>
-          <attribute name="domain" type="xsd:string"/>
-          <attribute name="applyCos" type="xsd:string"/>
-          <attribute name="attrs" type="xsd:string"/>
-          <attribute name="sortBy" type="xsd:string"/>
-          <attribute name="sortAscending" type="tns:intBool"/>
-          <attribute name="types" type="xsd:string"/>
-        </complexType>
+      <element name="SearchDirectoryRequest" type="tns:SearchDirectoryRequestType">
       </element>
-      <element name="SearchDirectoryResponse">
-        <complexType>
-          <sequence>
-            <element name="account" type="tns:ldapRecord" maxOccurs="unbounded"/>
-            <element name="alias" type="tns:ldapRecord" maxOccurs="unbounded"/>
-            <element name="dl" type="tns:ldapRecord" maxOccurs="unbounded"/>
-          </sequence>
-          <attribute name="more" type="xsd:string"/>
-          <attribute name="searchTotal" type="xsd:string"/>
-        </complexType>
+      <element name="SearchDirectoryResponse" type="tns:SearchDirectoryResponseType">
       </element>
 
       <element name="GetAllAccountsRequest">
@@ -494,6 +472,32 @@
       </element>
       <element name="AddDistributionListMemberResponse"/>
 
+      <complexType name="SearchDirectoryResponseType">
+        <sequence>
+          <element maxOccurs="unbounded" name="account" type="tns:ldapRecord">
+          </element>
+          <element maxOccurs="unbounded" name="alias" type="tns:ldapRecord">
+          </element>
+          <element maxOccurs="unbounded" name="dl" type="tns:ldapRecord">
+          </element>
+        </sequence>
+        <attribute name="more" type="string"></attribute>
+        <attribute name="searchTotal" type="string"></attribute>
+      </complexType>
+
+      <complexType name="SearchDirectoryRequestType">
+        <sequence>
+          <element name="query" type="string"></element>
+        </sequence>
+        <attribute name="limit" type="string"></attribute>
+        <attribute name="offset" type="string"></attribute>
+        <attribute name="domain" type="string"></attribute>
+        <attribute name="applyCos" type="string"></attribute>
+        <attribute name="attrs" type="string"></attribute>
+        <attribute name="sortBy" type="string"></attribute>
+        <attribute name="sortAscending" type="tns:intBool"></attribute>
+        <attribute name="types" type="string"></attribute>
+      </complexType>
     </schema>
   </types>
 
