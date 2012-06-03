@@ -239,8 +239,8 @@
       <element name="SetPasswordRequest">
         <complexType>
           <sequence>
-            <element name="id" type="xsd:string"/>
-            <element name="newPassword" type="xsd:string"/>
+            <element name="id" type="xsd:string" />
+            <element name="newPassword" type="xsd:string" />
           </sequence>
         </complexType>
       </element>
@@ -496,7 +496,6 @@
 
     </schema>
   </types>
-
 
   <message name="context">
     <part name="context" element="zns:context"/>
@@ -819,315 +818,406 @@
   </portType>
 
   <binding name="AppBinding" type="tns:ZimbraServicePort">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <soap:binding style="document"
+      transport="http://schemas.xmlsoap.org/soap/http" />
 
     <operation name="AuthRequest">
-      <soap:operation soapAction="/service/admin/soap/AuthRequest"/>
+      <soap:operation soapAction="/service/admin/soap/AuthRequest" />
       <input>
-        <soap:body use="literal"/>
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:body use="literal"/>
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="DelegateAuthRequest">
-      <soap:operation soapAction="/service/admin/soap/DelegateAuthRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/DelegateAuthRequest" />
       <input>
-        <soap:header use="literal" message="tns:AuthRequest" part="AuthRequest"/>
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:AuthRequest"
+          part="AuthRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:AuthResponse" part="AuthResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:AuthResponse"
+          part="AuthResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="CreateAccountRequest">
-      <soap:operation soapAction="/service/admin/soap/CreateAccountRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/CreateAccountRequest" />
       <input>
-        <soap:header use="literal" message="tns:CreateAccountRequest" part="CreateAccountRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:CreateAccountRequest" part="CreateAccountRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:CreateAccountResponse" part="CreateAccountResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:CreateAccountResponse" part="CreateAccountResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetAccountRequest">
-      <soap:operation soapAction="/service/admin/soap/GetAccountRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/GetAccountRequest" />
       <input>
-        <soap:header use="literal" message="tns:GetAccountRequest" part="GetAccountRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:GetAccountRequest"
+          part="GetAccountRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:GetAccountResponse" part="GetAccountResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetAccountResponse" part="GetAccountResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetAllAdminAccountsRequest">
-      <soap:operation soapAction="/service/admin/soap/GetAllAdminAccountsRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/GetAllAdminAccountsRequest" />
       <input>
-        <soap:header use="literal" message="tns:GetAllAdminAccountsRequest" part="GetAllAdminAccountsRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetAllAdminAccountsRequest"
+          part="GetAllAdminAccountsRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:GetAllAdminAccountsResponse" part="GetAllAdminAccountsResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetAllAdminAccountsResponse"
+          part="GetAllAdminAccountsResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="ModifyAccountRequest">
-      <soap:operation soapAction="/service/admin/soap/ModifyAccountRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/ModifyAccountRequest" />
       <input>
-        <soap:header use="literal" message="tns:ModifyAccountRequest" part="ModifyAccountRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:ModifyAccountRequest" part="ModifyAccountRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:ModifyAccountResponse" part="ModifyAccountResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:ModifyAccountResponse" part="ModifyAccountResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="RenameAccountRequest">
-      <soap:operation soapAction="/service/admin/soap/RenameAccountRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/RenameAccountRequest" />
       <input>
-        <soap:header use="literal" message="tns:RenameAccountRequest" part="RenameAccountRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:RenameAccountRequest" part="RenameAccountRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:RenameAccountResponse" part="RenameAccountResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:RenameAccountResponse" part="RenameAccountResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="DeleteAccountRequest">
-      <soap:operation soapAction="/service/admin/soap/DeleteAccountRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/DeleteAccountRequest" />
       <input>
-        <soap:header use="literal" message="tns:DeleteAccountRequest" part="DeleteAccountRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:DeleteAccountRequest" part="DeleteAccountRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:DeleteAccountResponse" part="DeleteAccountResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:DeleteAccountResponse" part="DeleteAccountResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="SetPasswordRequest">
-      <soap:operation soapAction="/service/admin/soap/SetPasswordRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/SetPasswordRequest" />
       <input>
-        <soap:header use="literal" message="tns:SetPasswordRequest" part="SetPasswordRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:SetPasswordRequest" part="SetPasswordRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:SetPasswordResponse" part="SetPasswordResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:SetPasswordResponse" part="SetPasswordResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="AddAccountAliasRequest">
-      <soap:operation soapAction="/service/admin/soap/AddAccountAliasRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/AddAccountAliasRequest" />
       <input>
-        <soap:header use="literal" message="tns:AddAccountAliasRequest" part="AddAccountAliasRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:AddAccountAliasRequest"
+          part="AddAccountAliasRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:AddAccountAliasResponse" part="AddAccountAliasResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:AddAccountAliasResponse"
+          part="AddAccountAliasResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="RemoveAccountAliasRequest">
-      <soap:operation soapAction="/service/admin/soap/RemoveAccountAliasRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/RemoveAccountAliasRequest" />
       <input>
-        <soap:header use="literal" message="tns:RemoveAccountAliasRequest" part="RemoveAccountAliasRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:RemoveAccountAliasRequest"
+          part="RemoveAccountAliasRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:RemoveAccountAliasResponse" part="RemoveAccountAliasResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:RemoveAccountAliasResponse"
+          part="RemoveAccountAliasResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetAllAccountsRequest">
-      <soap:operation soapAction="/service/admin/soap/GetAllAccountsRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/GetAllAccountsRequest" />
       <input>
-        <soap:header use="literal" message="tns:GetAllAccountsRequest" part="GetAllAccountsRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetAllAccountsRequest" part="GetAllAccountsRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:GetAllAccountsResponse" part="GetAllAccountsResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetAllAccountsResponse"
+          part="GetAllAccountsResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="SearchDirectoryRequest">
-      <soap:operation soapAction="/service/admin/soap/SearchDirectoryRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/SearchDirectoryRequest" />
       <input>
-        <soap:header use="literal" message="tns:SearchDirectoryRequest" part="SearchDirectoryRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:SearchDirectoryRequest"
+          part="SearchDirectoryRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:SearchDirectoryResponse" part="SearchDirectoryResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:SearchDirectoryResponse"
+          part="SearchDirectoryResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetAllDistributionListsRequest">
-      <soap:operation soapAction="/service/admin/soap/GetAllDistributionListsRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/GetAllDistributionListsRequest" />
       <input>
-        <soap:header use="literal" message="tns:GetAllDistributionListsRequest" part="GetAllDistributionListsRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetAllDistributionListsRequest"
+          part="GetAllDistributionListsRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:GetAllDistributionListsResponse" part="GetAllDistributionListsResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetAllDistributionListsResponse"
+          part="GetAllDistributionListsResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="CreateDomainRequest">
-      <soap:operation soapAction="/service/admin/soap/CreateDomainRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/CreateDomainRequest" />
       <input>
-        <soap:header use="literal" message="tns:CreateDomainRequest" part="CreateDomainRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:CreateDomainRequest" part="CreateDomainRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:CreateDomainResponse" part="CreateDomainResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:CreateDomainResponse" part="CreateDomainResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetDomainRequest">
-      <soap:operation soapAction="/service/admin/soap/GetDomainRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/GetDomainRequest" />
       <input>
-        <soap:header use="literal" message="tns:GetDomainRequest" part="GetDomainRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:GetDomainRequest"
+          part="GetDomainRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:GetDomainResponse" part="GetDomainResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:GetDomainResponse"
+          part="GetDomainResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetAllDomainsRequest">
-      <soap:operation soapAction="/service/admin/soap/GetAllDomainsRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/GetAllDomainsRequest" />
       <input>
-        <soap:header use="literal" message="tns:GetAllDomainsRequest" part="GetAllDomainsRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetAllDomainsRequest" part="GetAllDomainsRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:GetAllDomainsResponse" part="GetAllDomainsResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetAllDomainsResponse" part="GetAllDomainsResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="ModifyDomainRequest">
-      <soap:operation soapAction="/service/admin/soap/ModifyDomainRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/ModifyDomainRequest" />
       <input>
-        <soap:header use="literal" message="tns:ModifyDomainRequest" part="ModifyDomainRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:ModifyDomainRequest" part="ModifyDomainRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:ModifyDomainResponse" part="ModifyDomainResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:ModifyDomainResponse" part="ModifyDomainResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="DeleteDomainRequest">
-      <soap:operation soapAction="/service/admin/soap/DeleteDomainRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/DeleteDomainRequest" />
       <input>
-        <soap:header use="literal" message="tns:DeleteDomainRequest" part="DeleteDomainRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:DeleteDomainRequest" part="DeleteDomainRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:DeleteDomainResponse" part="DeleteDomainResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:DeleteDomainResponse" part="DeleteDomainResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="CreateCosRequest">
-      <soap:operation soapAction="/service/admin/soap/CreateCosRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/CreateCosRequest" />
       <input>
-        <soap:header use="literal" message="tns:CreateCosRequest" part="CreateCosRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:CreateCosRequest"
+          part="CreateCosRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:CreateCosResponse" part="CreateCosResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:CreateCosResponse"
+          part="CreateCosResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetAllCosRequest">
-      <soap:operation soapAction="/service/admin/soap/GetAllCosRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/GetAllCosRequest" />
       <input>
-        <soap:header use="literal" message="tns:GetAllCosRequest" part="GetAllCosRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:GetAllCosRequest"
+          part="GetAllCosRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:GetAllCosResponse" part="GetAllCosResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:GetAllCosResponse"
+          part="GetAllCosResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="ModifyCosRequest">
-      <soap:operation soapAction="/service/admin/soap/ModifyCosRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/ModifyCosRequest" />
       <input>
-        <soap:header use="literal" message="tns:ModifyCosRequest" part="ModifyCosRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:ModifyCosRequest"
+          part="ModifyCosRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:ModifyCosResponse" part="ModifyCosResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:ModifyCosResponse"
+          part="ModifyCosResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="DeleteCosRequest">
-      <soap:operation soapAction="/service/admin/soap/DeleteCosRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/DeleteCosRequest" />
       <input>
-        <soap:header use="literal" message="tns:DeleteCosRequest" part="DeleteCosRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:DeleteCosRequest"
+          part="DeleteCosRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:DeleteCosResponse" part="DeleteCosResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:DeleteCosResponse"
+          part="DeleteCosResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GrantRightRequest">
-      <soap:operation soapAction="/service/admin/soap/GrantRightRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/GrantRightRequest" />
       <input>
-        <soap:header use="literal" message="tns:GrantRightRequest" part="GrantRightRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal" message="tns:GrantRightRequest"
+          part="GrantRightRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:GrantRightResponse" part="GrantRightResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GrantRightResponse" part="GrantRightResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="GetDistributionListRequest">
-      <soap:operation soapAction="/service/admin/soap/GetDistributionListRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/GetDistributionListRequest" />
       <input>
-        <soap:header use="literal" message="tns:GetDistributionListRequest" part="GetDistributionListRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetDistributionListRequest"
+          part="GetDistributionListRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:GetDistributionListResponse" part="GetDistributionListResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:GetDistributionListResponse"
+          part="GetDistributionListResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
 
     <operation name="AddDistributionListMemberRequest">
-      <soap:operation soapAction="/service/admin/soap/AddDistributionListMemberRequest"/>
+      <soap:operation
+        soapAction="/service/admin/soap/AddDistributionListMemberRequest" />
       <input>
-        <soap:header use="literal" message="tns:AddDistributionListMemberRequest" part="AddDistributionListMemberRequest" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:AddDistributionListMemberRequest"
+          part="AddDistributionListMemberRequest" />
+        <soap:body use="literal" />
       </input>
       <output>
-        <soap:header use="literal" message="tns:AddDistributionListMemberResponse" part="AddDistributionListMemberResponse" />
-        <soap:body use="literal"/>
+        <soap:header use="literal"
+          message="tns:AddDistributionListMemberResponse"
+          part="AddDistributionListMemberResponse" />
+        <soap:body use="literal" />
       </output>
     </operation>
   </binding>
