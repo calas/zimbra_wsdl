@@ -272,6 +272,9 @@
       </element>
 
       <element name="GetAllAccountsRequest">
+        <annotation>
+          <documentation>requires authentication</documentation>
+        </annotation>
         <complexType>
           <sequence>
             <element name="domain" type="tns:domainRequest" minOccurs="0"/>
