@@ -2,6 +2,7 @@ AddAccountAliasResponse
 AddAccountLoggerResponse
 AddDistributionListAliasResponse
 AddDistributionListMemberResponse
+AuthResponse
 CheckAuthConfigResponse
 CheckBlobConsistencyResponse
 CheckDirectoryResponse
@@ -23,6 +24,7 @@ CreateGalSyncAccountResponse
 CreateServerResponse
 CreateVolumeResponse
 CreateZimletResponse
+DelegateAuthResponse
 DeleteAccountResponse
 DeleteCalendarResourceResponse
 DeleteCosResponse
