@@ -15,6 +15,7 @@ Currently implemented:
 
 * AuthRequest
 * DelegateAuthRequest
+* NoOpRequest
 
 ### Accounts
 

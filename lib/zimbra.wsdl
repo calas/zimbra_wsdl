@@ -6,7 +6,6 @@
   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
   xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:zimbraAdmin">
 
-
   <types>
     <schema targetNamespace="urn:zimbra" xmlns="http://www.w3.org/2001/XMLSchema">
 
@@ -502,6 +501,9 @@
         <attribute name="sortAscending" type="tns:intBool"></attribute>
         <attribute name="types" type="string"></attribute>
       </complexType>
+
+      <element name="NoOpRequest" />
+      <element name="NoOpResponse" />
     </schema>
   </types>
 
@@ -691,6 +693,13 @@
     <part name="AddDistributionListMemberResponse" element="tns:AddDistributionListMemberResponse" />
   </message>
 
+  <message name="NoOpRequest">
+    <part name="NoOpRequest" element="tns:NoOpRequest" />
+  </message>
+  <message name="NoOpResponse">
+    <part name="NoOpResponse" element="tns:NoOpResponse" />
+  </message>
+
   <portType name="ZimbraServicePort">
 
     <operation name="AuthRequest">
@@ -821,6 +830,11 @@
     <operation name="AddDistributionListMemberRequest">
       <input message="tns:AddDistributionListMemberRequest" />
       <output message="tns:AddDistributionListMemberResponse" />
+    </operation>
+
+    <operation name="NoOpRequest">
+      <input message="tns:NoOpRequest" />
+      <output message="tns:NoOpResponse" />
     </operation>
 
   </portType>
@@ -1190,8 +1204,21 @@
         <soap:body use="literal" />
       </output>
     </operation>
-  </binding>
 
+    <operation name="NoOpRequest">
+      <soap:operation soapAction="/service/admin/soap/NoOpRequest" />
+      <input>
+        <soap:header use="literal" message="tns:NoOpRequest"
+          part="NoOpRequest" />
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:header use="literal" message="tns:NoOpResponse"
+          part="NoOpResponse" />
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
 
   <service name="ZimbraService">
     <documentation>Zimbra's Admin SOAP API.</documentation>
