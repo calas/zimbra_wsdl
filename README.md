@@ -7,6 +7,58 @@ The gem just provides a valid document and a method that returns the path to
 it, so you can just require this gem in your Gemfile and you get a (hopefully)
 updated and community backed version of the Zimbra API WSDL.
 
+## Status
+
+Currently implemented:
+
+### Authentication
+
+* AuthRequest
+* DelegateAuthRequest
+* NoOpRequest
+
+### Accounts
+
+* CreateAccountRequest
+* DeleteAccountRequest
+* GetAccountRequest
+* GetAllAccountsRequest
+* GetAllAdminAccountsRequest
+* ModifyAccountRequest
+* RenameAccountRequest
+* SetPasswordRequest
+
+### Account Aliases
+
+* AddAccountAliasRequest
+* RemoveAccountAliasRequest
+
+### Distribution Lists
+
+* AddDistributionListMemberRequest
+* GetAllDistributionListsRequest
+* GetDistributionListRequest
+
+### Class of Service (COS)
+
+* CreateCosRequest
+* DeleteCosRequest
+* GetAllCosRequest
+* ModifyCosRequest
+* RenameCosRequest
+
+### Domains
+
+* CreateDomainRequest
+* DeleteDomainRequest
+* GetAllDomainsRequest
+* GetDomainRequest
+* ModifyDomainRequest
+
+### Directory
+
+* SearchDirectoryRequest
+
 ## Installation
 
 Add this line to your application's Gemfile:

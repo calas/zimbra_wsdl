@@ -2,6 +2,7 @@ AddAccountAliasRequest
 AddAccountLoggerRequest
 AddDistributionListAliasRequest
 AddDistributionListMemberRequest
+AuthRequest
 CheckAuthConfigRequest
 CheckBlobConsistencyRequest
 CheckDirectoryRequest
@@ -23,6 +24,7 @@ CreateGalSyncAccountRequest
 CreateServerRequest
 CreateVolumeRequest
 CreateZimletRequest
+DelegateAuthRequest
 DeleteAccountRequest
 DeleteCalendarResourceRequest
 DeleteCosRequest
